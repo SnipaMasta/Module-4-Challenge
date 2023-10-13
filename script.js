@@ -47,6 +47,7 @@ var questions = [
     }
 ]
 
+function 
 
 // timer function!
 // var i = 5;
