@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: white;
+    color: red;
+    border: black 1px solid;
+    font-weight: 500px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: black;
+
+}
