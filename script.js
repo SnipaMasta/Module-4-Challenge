@@ -18,7 +18,7 @@ var questions = [
         ]
     },
     {
-        question: "Which duo created the character of Spider-Man?"
+        question: "Which dynamic duo created the character of Spider-Man?"
         answers: [
             { text: "A. Stanley Tucci & Steve Ditko ", correct: false }
             { text: "B. Stan Lee & Steve Ditko", correct: true }
@@ -45,7 +45,12 @@ var questions = [
             { text: "D. 1963", correct: true }
         ]
     }
-]
+];
+
+var questionText = document.getElementById("question");
+var answerButton = document.getElementById("answer-buttons");
+var nextButton = document.getElementById("next");
+
 
 function 
 
