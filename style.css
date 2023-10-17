@@ -15,6 +15,9 @@
     text-align: left;
     cursor: pointer;
     transition: all 0.3s;
+    width: 50%;
+    display: flex;
+    justify-content: center;
 }
 
 .btn:hover {
@@ -28,4 +31,30 @@ body {
 
 h1, h2 {
     color:white 
+}
+
+.main-screen {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
+    align-items: center;
+    margin: 10px
+}
+
+.spidey-knowledge, .start-quiz {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    padding: 15px;
+}
+
+.spidey-knowledge {
+    margin-top: 30px;
+}
+
+#answer-buttons, #question, #next {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
