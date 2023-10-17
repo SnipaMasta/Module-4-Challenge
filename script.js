@@ -133,12 +133,15 @@ nextButton.addEventListener("click", ()=> {
 })
 startQuiz();
 
-// timer function!
-// var i = 5;
-// var poop = setInterval(function(){
-//     console.log(i);
-//     i--;
-//     if (i < 0) {
-//         clearInterval(poop)
-//     }
-// }, 1000);
+function timer() {
+var i = 5;
+var timeRemaining = setInterval(function(){
+    console.log(i);
+    i--;
+    if (i < 0) {
+        clearInterval(poop)
+    }
+}, 1000);
+}
+
+timer()

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .btn {
@@ -9,8 +10,9 @@
     color: red;
     border: black 1px solid;
     font-weight: 500px;
-    padding: 10px;
-    margin: 10px 0;
+    font-size: 2rem;
+    padding: 50px;
+    margin: 10px;
     width: 100%;
     text-align: left;
     cursor: pointer;
@@ -18,6 +20,8 @@
     width: 50%;
     display: flex;
     justify-content: center;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .btn:hover:not([disabled]) {
@@ -33,7 +37,8 @@ body {
 }
 
 h1, h2 {
-    color:white 
+    color:white; 
+    padding: 15px;
 }
 
 .main-screen {
@@ -41,7 +46,8 @@ h1, h2 {
     flex-direction: column;
     padding: 10px 10px 10px 10px;
     align-items: center;
-    margin: 10px
+    margin: 10px;
+    text-align: center;
 }
 
 .spidey-knowledge, .start-quiz {
@@ -63,13 +69,33 @@ h1, h2 {
 }
 
 .correct {
-    background: greenyellow;
+    background: green;
+    color: white;
 }
 
 .incorrect {
-    background: red;
+    background: rgb(116, 0, 0);
+    color: white;
 }
 
 #next {
     cursor: pointer;
+    display: flex;
+    justify-content: ;
+}
+
+.quiz {
+    background-color: #2B3784;
+    width: 90%;
+    max-width: 900px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+    font-size: 1.25rem;
+    
+}
+
+#question {
+    margin-bottom: 30px;
+    text-align: center;
 }
