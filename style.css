@@ -91,6 +91,25 @@ h1, h2 {
     color: white;
 }
 
+.spidey-knowledge {
+    cursor: pointer;
+    background: #2B3784;
+    font-weight: 600px;
+    width: 31%;
+    padding: 30px;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    display: block;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.spidey-knowledge:hover {
+    background-color: white;
+    color: #2B3784;
+    transition: .3s;
+}
+
 #next:hover {
     background-color: white;
     color: #2B3784;
@@ -105,10 +124,16 @@ h1, h2 {
     border-radius: 10px;
     padding: 30px;
     font-size: 1.25rem;
-    
+    margin-top: -1px;
+    text-align: center;
 }
 
 #question {
     margin-bottom: 30px;
     text-align: center;
+}
+
+#timer {
+    color: #df1f2d;
+    font-size: 1.3rem
 }

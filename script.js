@@ -47,6 +47,8 @@ const questions = [
     },
 ];
 
+var i = 30;
+var timer = document.querySelector(".timer");
 
 
 const questionElement = document.getElementById("question");
@@ -55,6 +57,7 @@ const nextButton = document.getElementById("next");
 
 let currentQuestionIndex = 0;
 let score = 0;
+
 
 function startQuiz() {
     currentQuestionIndex = 0; 
@@ -133,15 +136,3 @@ nextButton.addEventListener("click", ()=> {
 })
 startQuiz();
 
-function timer() {
-var i = 5;
-var timeRemaining = setInterval(function(){
-    console.log(i);
-    i--;
-    if (i < 0) {
-        clearInterval(poop)
-    }
-}, 1000);
-}
-
-timer()
