@@ -20,9 +20,12 @@
     justify-content: center;
 }
 
-.btn:hover {
+.btn:hover:not([disabled]) {
     background: black;
 
+}
+.btn:disabled {
+    cursor: no-drop
 }
 
 body {
@@ -57,4 +60,16 @@ h1, h2 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.correct {
+    background: greenyellow;
+}
+
+.incorrect {
+    background: red;
+}
+
+#next {
+    cursor: pointer;
 }
