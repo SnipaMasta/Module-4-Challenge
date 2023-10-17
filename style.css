@@ -80,8 +80,21 @@ h1, h2 {
 
 #next {
     cursor: pointer;
-    display: flex;
-    justify-content: ;
+    background: #2B3784;
+    font-weight: 600px;
+    width: 31%;
+    padding: 30px;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    display: block;
+    font-size: 1.2rem;
+    color: white;
+}
+
+#next:hover {
+    background-color: white;
+    color: #2B3784;
+    transition: .3s;
 }
 
 .quiz {
