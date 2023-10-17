@@ -104,6 +104,10 @@ h1, h2 {
     color: white;
 }
 
+a {
+    color: #df1f2d;
+}
+
 .spidey-knowledge:hover {
     background-color: white;
     color: #2B3784;
