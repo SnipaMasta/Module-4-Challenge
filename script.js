@@ -50,6 +50,7 @@ const questions = [
 const quizAppear = document.querySelector(".quiz");
 const spideyKnowledge = document.querySelector(".spidey-knowledge")
 const startButton = document.querySelector(".start-button")
+const questionBox = document.getElementById("question")
 
 function hideStart() {
     startButton.style.display = "none"
@@ -63,7 +64,7 @@ function hideQuiz() {
     quizAppear.style.display ="block"
 }
 
-var timeLeft = 45;
+var timeLeft = 5;
 
 function updateTimer() {
     document.getElementById("timer").textContent = timeLeft + " seconds remaining";
@@ -76,6 +77,9 @@ function runTimer() {
         timeLeft--;
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
+            document.getElementById("timer").textContent = "You Lose! Refresh the page to try again.";
+            resetState();
+            questionBox.style.display = "none";
         } else {
             updateTimer();
         }
