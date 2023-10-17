@@ -63,8 +63,25 @@ function hideQuiz() {
     quizAppear.style.display ="block"
 }
 
-var i = 30;
-var timer = document.querySelector(".timer");
+var timeLeft = 45;
+
+function updateTimer() {
+    document.getElementById("timer").textContent = timeLeft + " seconds remaining";
+}
+
+function runTimer() {
+    updateTimer();
+
+    var timerInterval = setInterval(function() {
+        timeLeft--;
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+        } else {
+            updateTimer();
+        }
+    }, 1000)
+}
+
 
 
 const questionElement = document.getElementById("question");
