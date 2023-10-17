@@ -50,7 +50,7 @@ h1, h2 {
     text-align: center;
 }
 
-.spidey-knowledge, .start-quiz {
+.spidey-knowledge, .start-button {
     display: flex;
     justify-content: center;
     margin: 15px;
@@ -59,6 +59,7 @@ h1, h2 {
 
 .spidey-knowledge {
     margin-top: 30px;
+    display: block;
 }
 
 #answer-buttons, #question, #next {
@@ -91,7 +92,7 @@ h1, h2 {
     color: white;
 }
 
-.spidey-knowledge {
+.spidey-knowledge, .start-button {
     cursor: pointer;
     background: #2B3784;
     font-weight: 600px;
@@ -114,6 +115,11 @@ a {
     transition: .3s;
 }
 
+.start-button:hover{ 
+    background-color: white;
+    color: #2B3784;
+    transition: .3s;
+}
 #next:hover {
     background-color: white;
     color: #2B3784;
@@ -130,6 +136,7 @@ a {
     font-size: 1.25rem;
     margin-top: -1px;
     text-align: center;
+    display: none;
 }
 
 #question {

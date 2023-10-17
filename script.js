@@ -47,6 +47,22 @@ const questions = [
     },
 ];
 
+const quizAppear = document.querySelector(".quiz");
+const spideyKnowledge = document.querySelector(".spidey-knowledge")
+const startButton = document.querySelector(".start-button")
+
+function hideStart() {
+    startButton.style.display = "none"
+}
+
+function hideSpidey() {
+    spideyKnowledge.style.display ="none"
+}
+
+function hideQuiz() {
+    quizAppear.style.display ="block"
+}
+
 var i = 30;
 var timer = document.querySelector(".timer");
 
