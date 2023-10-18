@@ -76,7 +76,6 @@ function runTimer() {
     var timerInterval = setInterval(function () {
         timeLeft--;
         if (timeLeft <= 0) {
-            clearInterval(timerInterval);
             document.getElementById("timer").textContent = "You Lose! Refresh the page to try again.";
             resetState();
             questionBox.style.display = "none";
@@ -90,6 +89,7 @@ const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next");
 const submitScore = document.getElementById("submit");
+const username = document.getElementById("username");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -100,6 +100,7 @@ function startQuiz() {
     score = 0;
     nextButton.innerHTML = "Next Question!";
     showQuestion();
+    timeLeft = timeLeft * 0 + 30
 }
 
 startQuiz()
@@ -124,6 +125,8 @@ function showQuestion() {
 }
 
 function resetState() {
+    username.style.display = "none";
+    submitScore.style.display = "none";
     nextButton.style.display = "none";
     clearInterval(timeLeft);
     while (answerButtons.firstChild) {
@@ -150,10 +153,12 @@ function selectAnswer(e) {
 }
 
 function showScore() {
-    timeLeft = 300;
+    timeLeft = timeLeft + 30;
     resetState();
+    localStorage.setItem("mostRecentScore", score);
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}
 !`;
+    username.style.display = "block";
     submitScore.style.display = "block";
     nextButton.innerHTML = "Try Again!";
     nextButton.style.display = "block"
@@ -174,5 +179,26 @@ nextButton.addEventListener("click", () => {
         startQuiz();
     }
 })
-startQuiz();
 
+var userName = document.getElementById("username");
+var saveScoreBtn = document.getElementById("submit");
+var finalScore = document.getElementById("question");
+var mostRecentScore = localStorage.getItem("mostRecentScore");
+finalScore.innerHTML = mostRecentScore;
+
+username.addEventListener("keyup", () =>{
+    console.log(userName.value);
+    saveScoreBtn.disabled = !username.value;
+})
+
+saveHighScore = e => {
+    e.preventDefault();
+    console.log("clicked save");
+}
+var highscoresList = document.getElementById("highscoresList");
+var highScores = JSON.parse(localStorage.getItem("highScores")) || []
+
+console.log(highScores);
+
+
+startQuiz();
