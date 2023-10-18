@@ -1,7 +1,7 @@
 const questions = [
     {
         question: "Who is Spider-Man behind the mask?",
-        answers:[
+        answers: [
             { text: "A. Bruce Banner", correct: false },
             { text: "B. Peter Piper", correct: false },
             { text: "C. Peter Frampton", correct: false },
@@ -10,7 +10,7 @@ const questions = [
     },
     {
         question: "What animal bit Spider-Man to grant him with his superpowers?",
-        answers:[
+        answers: [
             { text: "A. Cockroach", correct: false },
             { text: "B. Spider", correct: true },
             { text: "C. Mosquito", correct: false },
@@ -19,7 +19,7 @@ const questions = [
     },
     {
         question: "Which dynamic duo created the character of Spider-Man?",
-        answers:[
+        answers: [
             { text: "A. Stanley Tucci & Steve Ditko", correct: false },
             { text: "B. Stan Lee & Steve Ditko", correct: true },
             { text: "C. Stanley Kubrick & Steve Ditko", correct: false },
@@ -29,16 +29,16 @@ const questions = [
     },
     {
         question: "Which of these is NOT a Spider-Man villain?",
-    answers:[
+        answers: [
             { text: "A. Demon", correct: true },
-        { text: "B. Sandman", correct: false },
-        { text: "C. Venom", correct: false },
-        { text: "D. Kraven", correct: false },
+            { text: "B. Sandman", correct: false },
+            { text: "C. Venom", correct: false },
+            { text: "D. Kraven", correct: false },
         ]
     },
     {
         question: "What year was the first issue of 'Amazing Spider-Man' released?",
-        answers:[
+        answers: [
             { text: "A. 1959", correct: false },
             { text: "B. 1966", correct: false },
             { text: "C. 1970", correct: false },
@@ -57,14 +57,14 @@ function hideStart() {
 }
 
 function hideSpidey() {
-    spideyKnowledge.style.display ="none"
+    spideyKnowledge.style.display = "none"
 }
 
 function hideQuiz() {
-    quizAppear.style.display ="block"
+    quizAppear.style.display = "block"
 }
 
-var timeLeft = 5;
+var timeLeft = 30;
 
 function updateTimer() {
     document.getElementById("timer").textContent = timeLeft + " seconds remaining";
@@ -73,7 +73,7 @@ function updateTimer() {
 function runTimer() {
     updateTimer();
 
-    var timerInterval = setInterval(function() {
+    var timerInterval = setInterval(function () {
         timeLeft--;
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
@@ -86,18 +86,17 @@ function runTimer() {
     }, 1000)
 }
 
-
-
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next");
+const submitScore = document.getElementById("submit");
 
 let currentQuestionIndex = 0;
 let score = 0;
 
 
 function startQuiz() {
-    currentQuestionIndex = 0; 
+    currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next Question!";
     showQuestion();
@@ -120,27 +119,29 @@ function showQuestion() {
             button.dataset.correct = answer.correct;
         }
         button.addEventListener("click", selectAnswer);
-        
-});
+
+    });
 }
 
-function resetState(){
+function resetState() {
     nextButton.style.display = "none";
-    while(answerButtons.firstChild){
+    clearInterval(timeLeft);
+    while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
 function selectAnswer(e) {
     var selectedBtn = e.target;
     var isCorrect = selectedBtn.dataset.correct === "true";
-    if (isCorrect){
+    if (isCorrect) {
         selectedBtn.classList.add("correct");
-        score ++;
+        score++;
     } else {
         selectedBtn.classList.add("incorrect");
+        timeLeft = timeLeft - 7;
     }
     Array.from(answerButtons.children).forEach(button => {
-        if(button.dataset.correct === "true"){
+        if (button.dataset.correct === "true") {
             button.classList.add("correct");
         }
         button.disabled = true;
@@ -149,23 +150,25 @@ function selectAnswer(e) {
 }
 
 function showScore() {
+    timeLeft = 300;
     resetState();
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}
 !`;
-nextButton.innerHTML = "Try Again!";
-nextButton.style.display = "block"
+    submitScore.style.display = "block";
+    nextButton.innerHTML = "Try Again!";
+    nextButton.style.display = "block"
 }
 function handleNextButton() {
     currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length){
+    if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
         showScore();
     }
 }
 
-nextButton.addEventListener("click", ()=> {
-    if(currentQuestionIndex < questions.length){
+nextButton.addEventListener("click", () => {
+    if (currentQuestionIndex < questions.length) {
         handleNextButton();
     } else {
         startQuiz();
