@@ -12,9 +12,7 @@ No installation required! Simply click the link to test your Spider-Man stuff.
 
 Click through the quiz and see how well you do! Be sure to complete the quiz before time's up!
 
-    ```md
-    ![alt text](assets/images/screenshot.png)C:\Users\17329\bootcamp-homework\Module-4-Challenge\Module-4-Challenge\assets\Capture.PNG
-    ```
+assets/Capture.PNG
 
 ## Credits
 
