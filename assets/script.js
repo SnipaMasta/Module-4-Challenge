@@ -52,6 +52,10 @@ const spideyKnowledge = document.querySelector(".spidey-knowledge")
 const startButton = document.querySelector(".start-button")
 const questionBox = document.getElementById("question")
 
+function showLeaderboard() {
+    highscore.style.display= "block"
+} 
+
 function hideStart() {
     startButton.style.display = "none"
 }
@@ -90,6 +94,7 @@ const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next");
 const submitScore = document.getElementById("submit");
 const username = document.getElementById("username");
+const highscore = document.getElementById("highscoresList");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -155,7 +160,6 @@ function selectAnswer(e) {
 function showScore() {
     timeLeft = timeLeft + 30;
     resetState();
-    localStorage.setItem("mostRecentScore", score);
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}
 !`;
     username.style.display = "block";
@@ -184,21 +188,36 @@ var userName = document.getElementById("username");
 var saveScoreBtn = document.getElementById("submit");
 var finalScore = document.getElementById("question");
 var mostRecentScore = localStorage.getItem("mostRecentScore");
+var MaxHighScores  = 5;
 finalScore.innerHTML = mostRecentScore;
+
 
 username.addEventListener("keyup", () =>{
     console.log(userName.value);
     saveScoreBtn.disabled = !username.value;
 })
-
 saveHighScore = e => {
     e.preventDefault();
-    console.log("clicked save");
+
+    var score = { 
+        score: mostRecentScore,
+        name: username.value
+        
+    };
+    console.log(score);
+    highScores.push(score);
+    console.log(highScores);
+    highScores.sort( (a,b) => b.score - a.score)
+    highScores.splice(5);
+    localStorage.setItem("highScores", JSON.stringify(highScores));
 }
 var highscoresList = document.getElementById("highscoresList");
-var highScores = JSON.parse(localStorage.getItem("highScores")) || []
-
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 console.log(highScores);
 
+highScores.map(score => {
+    console.log(`<li class="high-score">${score.name}-${score.score}</li>`);
+})
+.join("");
 
 startQuiz();
