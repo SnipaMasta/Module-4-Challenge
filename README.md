@@ -10,7 +10,7 @@ No installation required! Simply click the link to test your Spider-Man stuff.
 
 ## Usage
 
-[Capture](https://github.com/SnipaMasta/Module-4-Challenge/assets/
+[Capture]/assets/Capture.PNG
 
 Click through the quiz and see how well you do! Be sure to complete the quiz before time's up!
 
