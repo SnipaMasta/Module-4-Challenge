@@ -12,7 +12,7 @@ No installation required! Simply click the link to test your Spider-Man stuff.
 
 Click through the quiz and see how well you do! Be sure to complete the quiz before time's up!
 
-assets/Capture.PNG
+/assets/Capture.PNG
 
 ## Credits
 
