@@ -8,7 +8,7 @@ The project was built to showcase knowledge of the 3 main pillars of front-end w
 
 No installation required! Simply click the link to test your Spider-Man stuff. Click the link below to check it out!
 
-https://snipamasta.github.io/Module-4-Challenge/
+https://snipamasta.github.io/Spidey-Quiz/
 
 ## Usage
 
